@@ -18,9 +18,7 @@ public class ProductDAOImpl implements ProductDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	
 	@Override
-	@Transactional
 	public List<Product> getProducts() {
 		
 		//get the current hibernate session
