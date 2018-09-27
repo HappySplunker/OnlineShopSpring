@@ -49,11 +49,18 @@
 						<c:param name="productId" value="${tempProduct.id}" />
 				</c:url>
 					
+					<c:url var="deleteLink" value="/product/delete">
+						<c:param name="productId" value="${tempProduct.id}" />
+				</c:url>
 				<tr>
 					<td> ${tempProduct.title} </td>
 					<td> ${tempProduct.price} </td>
 					<td> ${tempProduct.description} </td>
-					<td> <a href="${updateLink}">Update</a> </td>
+					<td> <a href="${updateLink}">Update</a> 
+					|
+						<a href="${deleteLink}"
+						onclick="if(!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+					</td>
 				</tr>
 			
 			</c:forEach>	
